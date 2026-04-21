@@ -4,6 +4,7 @@ import { HeroScene } from './3d/scenes/HeroScene'
 import { Navigation } from './components/Navigation'
 import { PortfolioSection } from './components/PortfolioSection'
 import { FeaturesSection } from './components/FeaturesSection'
+import { TestimonialsSection } from './components/TestimonialsSection'
 import { CTASection } from './components/CTASection'
 import { Footer } from './components/Footer'
 import { motion } from 'framer-motion'
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Features Section */}
       <FeaturesSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <CTASection />

@@ -9,6 +9,7 @@ export function Navigation() {
 
   const links = [
     { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
     { href: '/admin', label: 'Admin' },
   ]

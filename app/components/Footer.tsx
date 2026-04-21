@@ -8,6 +8,8 @@ export function Footer() {
 
   const links = [
     { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'Insights', href: '/insights' },
     { label: 'Contact', href: '/contact' },
     { label: 'Admin', href: '/admin' },
   ]
