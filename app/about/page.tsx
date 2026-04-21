@@ -1,13 +1,24 @@
 'use client'
 
 import React from 'react'
+import dynamic from 'next/dynamic'
 import { Navigation } from '@/app/components/Navigation'
 import { Footer } from '@/app/components/Footer'
 import { motion } from 'framer-motion'
-import { Canvas3D } from '@/app/3d/Canvas3D'
-import { Globe3D } from '@/app/3d/Globe3D'
-import { ParticleSystem } from '@/app/3d/ParticleSystem'
 import { Zap, Target, Eye, Rocket } from 'lucide-react'
+
+const Canvas3D = dynamic(() => import('@/app/3d/Canvas3D').then(mod => ({ default: mod.Canvas3D })), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-background" />,
+})
+
+const Globe3D = dynamic(() => import('@/app/3d/Globe3D').then(mod => ({ default: mod.Globe3D })), {
+  ssr: false,
+})
+
+const ParticleSystem = dynamic(() => import('@/app/3d/ParticleSystem').then(mod => ({ default: mod.ParticleSystem })), {
+  ssr: false,
+})
 
 const values = [
   {

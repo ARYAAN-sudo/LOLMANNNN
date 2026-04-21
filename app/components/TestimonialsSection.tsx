@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     name: 'Mike Rodriguez',
     role: 'Founder & CEO',
     content:
-      'The website is not just beautiful—it's performant and engaging. Our conversion rates improved significantly.',
+      "The website is not just beautiful—it's performant and engaging. Our conversion rates improved significantly.",
     rating: 5,
   },
   {

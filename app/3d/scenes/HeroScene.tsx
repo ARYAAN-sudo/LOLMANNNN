@@ -1,10 +1,24 @@
 'use client'
 
-import { Canvas3D } from '../Canvas3D'
-import { ParticleSystem } from '../ParticleSystem'
-import { MorphingShape } from '../MorphingShape'
-import { InteractiveObject } from '../InteractiveObject'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
+
+const Canvas3D = dynamic(() => import('../Canvas3D').then(mod => ({ default: mod.Canvas3D })), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen bg-background" />,
+})
+
+const ParticleSystem = dynamic(() => import('../ParticleSystem').then(mod => ({ default: mod.ParticleSystem })), {
+  ssr: false,
+})
+
+const MorphingShape = dynamic(() => import('../MorphingShape').then(mod => ({ default: mod.MorphingShape })), {
+  ssr: false,
+})
+
+const InteractiveObject = dynamic(() => import('../InteractiveObject').then(mod => ({ default: mod.InteractiveObject })), {
+  ssr: false,
+})
 
 export function HeroScene() {
   return (

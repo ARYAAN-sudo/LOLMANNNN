@@ -1,15 +1,29 @@
 'use client'
 
 import React from 'react'
+import dynamic from 'next/dynamic'
 import { Navigation } from '@/app/components/Navigation'
 import { Footer } from '@/app/components/Footer'
 import { motion } from 'framer-motion'
-import { Canvas3D } from '@/app/3d/Canvas3D'
-import { FloatingMesh } from '@/app/3d/FloatingMesh'
-import { TorusKnot } from '@/app/3d/TorusKnot'
-import { ParticleSystem } from '@/app/3d/ParticleSystem'
 import { CodeShowcase } from '@/app/components/CodeShowcase'
 import { Sparkles, Zap, Globe, Palette } from 'lucide-react'
+
+const Canvas3D = dynamic(() => import('@/app/3d/Canvas3D').then(mod => ({ default: mod.Canvas3D })), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-background" />,
+})
+
+const FloatingMesh = dynamic(() => import('@/app/3d/FloatingMesh').then(mod => ({ default: mod.FloatingMesh })), {
+  ssr: false,
+})
+
+const TorusKnot = dynamic(() => import('@/app/3d/TorusKnot').then(mod => ({ default: mod.TorusKnot })), {
+  ssr: false,
+})
+
+const ParticleSystem = dynamic(() => import('@/app/3d/ParticleSystem').then(mod => ({ default: mod.ParticleSystem })), {
+  ssr: false,
+})
 
 const services = [
   {
